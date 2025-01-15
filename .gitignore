@@ -1,9 +1,13 @@
 chromadbs/*
+!chromadbs/.gitkeep
 data/Closed_Incident_data/*
+!data/Closed_Incident_data/.gitkeep
 data/Incoming_Incident_Data/*
+!data/Incoming_Incident_Data/.gitkeep
 data/Closed_Incident_Data_w_Summaries/
 .env
 .venv
 app/__pycache__/
 app/notebook.ipynb
 .DS_Store
+!.gitkeep
