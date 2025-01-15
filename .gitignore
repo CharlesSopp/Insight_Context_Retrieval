@@ -1,0 +1,7 @@
+chromadbs/*
+data/Closed_Incident_data/*
+data/Incoming_Incident_Data/*
+.env
+.venv
+app/__pycache__/
+app/notebook.ipynb/

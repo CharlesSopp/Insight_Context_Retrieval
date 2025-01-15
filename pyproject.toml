@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "fastapi-insight-context-retrieval"
+version = "0.1.0"
+description = ""
+authors = ["CharlesSopp <charles.sopp@logicmonitor.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+ipykernel = "^6.29.5"
+numpy = ">=1.22.4,<2"
+chromadb = "^0.6.2"
+sentence-transformers = "^3.3.1"
+pandas = "^2.2.3"
+openpyxl = "^3.1.5"
+langchain-openai = "^0.3.0"
+langchain-community = "^0.3.14"
+uvicorn = "^0.34.0"
+optuna = "^4.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
