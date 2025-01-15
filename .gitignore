@@ -1,7 +1,9 @@
 chromadbs/*
 data/Closed_Incident_data/*
 data/Incoming_Incident_Data/*
+data/Closed_Incident_Data_w_Summaries/
 .env
 .venv
 app/__pycache__/
-app/notebook.ipynb/
+app/notebook.ipynb
+.DS_Store
