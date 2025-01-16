@@ -17,6 +17,7 @@ langchain-openai = "^0.3.0"
 langchain-community = "^0.3.14"
 uvicorn = "^0.34.0"
 optuna = "^4.1.0"
+streamlit = "^1.41.1"
 
 
 [build-system]
