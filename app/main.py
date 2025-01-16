@@ -62,11 +62,11 @@ def get_all_similar_closed_incidents_endpoint(request: QuerySimilarInsights):
     inc_eventNames, inc_eventObjects, inc_eventCIs = extract_insight_info(request.incoming_insight)
     query_df = query_insights(inc_eventNames, inc_eventObjects, inc_eventCIs, threshold=SIMILARITY_THRESHOLD)
     response = get_all_close_notes(query_df)
+    response = response.applymap(lambda x: str(x) if isinstance(x, float) else x)
     return {"summary_of_incidents" : response.to_dict(orient="records")}
 
 @app.post("/get_detailed_summary_of_clustered_incidents_for_chat")
 def get_detailed_summary_of_clustered_incidents_endpoint(request: QuerySimilarInsights):
-    global summary
     inc_eventNames, inc_eventObjects, inc_eventCIs = extract_insight_info(request.incoming_insight)
     optuna.logging.set_verbosity(optuna.logging.WARNING)
     similar_ids = list(query_insights(inc_eventNames, inc_eventObjects, inc_eventCIs, threshold=SIMILARITY_THRESHOLD)['id'])
