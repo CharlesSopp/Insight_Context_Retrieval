@@ -12,7 +12,7 @@ AZURE_ENDPOINT = os.getenv('AZURE_ENDPOINT')
 llm = AzureChatOpenAI(
     azure_deployment='gpt-4o',
     api_version="2024-08-01-preview",
-    temperature=0.7,
+    temperature=0.3,
     azure_endpoint=AZURE_ENDPOINT,
     api_key=AZURE_API_KEY,
 )
