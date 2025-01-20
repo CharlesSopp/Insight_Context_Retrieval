@@ -1,3 +1,4 @@
+from langchain_community.callbacks import get_openai_callback
 import streamlit as st
 import requests
 import json
@@ -11,9 +12,13 @@ def get_insight_summary(insight_path):
 
     response = requests.post(url='http://127.0.0.1:8000/get_detailed_summary_of_clustered_incidents_for_chat', json=payload)
     summary_text = response.json()['summary_of_incidents']
-    return summary_text
+    cost_to_summarise = response.json()['cost_to_generate']
 
-summary_text = get_insight_summary(insight_path = "./data/Incoming_Incident_Data/INC17829485.json")
+    print(f"Cost to summarise: {cost_to_summarise}\n")
+    print(f"Close notes summary:\n{summary_text}")
+    return summary_text, cost_to_summarise
+
+summary_text, cost_to_summarise = get_insight_summary(insight_path = "./data/Incoming_Incident_Data/INC17829485.json")
 
 st.session_state.messages = []
 
